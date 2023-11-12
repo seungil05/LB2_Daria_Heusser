@@ -10,6 +10,7 @@ def b3g_page():
     even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
     return jsonify(squared_numbers + even_numbers)
 
+
 @app.route('/b3f', methods=['GET'])
 def b3f_page():
     addition = lambda x, y: x + y
