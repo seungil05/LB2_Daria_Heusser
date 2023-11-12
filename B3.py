@@ -26,7 +26,6 @@ def b3e_page():
     sorted_words = sorted(words, key=lambda x: len(x))
     data = [5, 12, 8, 3, 15]
     maximum_value = max(data, key=lambda x: x % 10)
-    print(maximum_value)
     return jsonify(sorted_words + [maximum_value])
 
 
