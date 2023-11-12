@@ -10,25 +10,20 @@ def b3g_page():
     even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
     return jsonify(squared_numbers + even_numbers)
 
-
 @app.route('/b3f', methods=['GET'])
 def b3f_page():
-    # Beispiel: Lambda-Ausdruck für die Addition zweier Zahlen
     addition = lambda x, y: x + y
-    result_addition = addition(3, 5)  # result_addition = 8
-    # Lambda-Ausdruck für die Multiplikation dreier Zahlen
+    result_addition = addition(3, 5)
     multiplication = lambda x, y, z: x * y * z
-    result_multiplication = multiplication(2, 4, 3)  # result_multiplication = 24
+    result_multiplication = multiplication(2, 4, 3)
     return jsonify(result_multiplication + result_addition)
 
 
 @app.route('/b3e', methods=['GET'])
 def b3e_page():
-    # Beispiel: Sortieren von Wörtern nach ihrer Länge mithilfe eines Lambda-Ausdrucks
     words = ["orange", "banana", "kiwi", "apple"]
     sorted_words = sorted(words, key=lambda x: len(x))
 
-    # Ergebnis: ['kiwi', 'apple', 'banana', 'orange']
     return jsonify(sorted_words)
 
 
