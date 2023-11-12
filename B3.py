@@ -5,10 +5,11 @@ app = Flask(__name__)
 
 @app.route('/b3g', methods=['GET'])
 def b3g_page():
-    numbers = [1, 2, 3, 4, 5]
-    squared_numbers = list(map(lambda x: x ** 2, numbers))
-    even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
-    return jsonify(squared_numbers + even_numbers)
+    square = lambda x: x ** 2
+    result_square = square(5)
+    uppercase = lambda s: s.upper()
+    result_uppercase = uppercase("hello")
+    return jsonify(result_square + result_uppercase)
 
 
 @app.route('/b3f', methods=['GET'])

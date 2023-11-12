@@ -7,11 +7,8 @@ app = Flask(__name__)
 @app.route('/b4g', methods=['GET'])
 def b4g_page():
     numbers = [1, 2, 3, 4, 5]
-
     squared_numbers = list(map(lambda x: x ** 2, numbers))
-
     even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
-
     sum_all = reduce(lambda x, y: x + y, numbers)
 
     return jsonify({
@@ -25,11 +22,8 @@ def b4g_page():
 @app.route('/b4f', methods=['GET'])
 def b4f_page():
     words = ["apple", "banana", "kiwi", "orange"]
-
     uppercase_words = list(map(lambda x: x.upper(), words))
-
     long_words = list(filter(lambda x: len(x) > 5, uppercase_words))
-
     concatenated_string = reduce(lambda x, y: x + y, long_words)
 
     return jsonify({
@@ -49,9 +43,7 @@ def b4e_page():
     ]
 
     average_grades = list(map(lambda student: sum(student["grades"]) / len(student["grades"]), students))
-
     top_students = list(filter(lambda avg: avg > 85, average_grades))
-
     total_average = reduce(lambda x, y: x + y, top_students) / len(top_students)
 
     return jsonify({

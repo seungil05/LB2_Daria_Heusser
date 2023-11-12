@@ -4,15 +4,12 @@ from flask import Flask, jsonify
 app = Flask(__name__)
 
 
-# Verbesserte Benennung und Extraktion von Methoden
 def calculate_c1g_result():
     data = [1, 2, 3, 4, 5]
 
-    # Extrahiere die Logik in eine separate Methode
     def multiply_numbers(x, y):
         return x * y
 
-    # Verwende die `reduce` Funktion mit der neuen Methode
     result = reduce(multiply_numbers, data)
 
     return result
@@ -20,10 +17,8 @@ def calculate_c1g_result():
 
 @app.route('/c1g', methods=['GET'])
 def c1g_page():
-    # Rufe die berechnete Antwort ab
     result = calculate_c1g_result()
 
-    # Benutze jsonify für die Antwort
     response = jsonify({'c1g_result': result})
 
     return response
