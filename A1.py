@@ -9,21 +9,21 @@ def add_numbers(a, b):
 
 
 # Beispiel für eine Prozedur
-def print_greeting(name):
-    return f"Hello, {name}!"
+def add_and_print(a, b):
+    result = a + b
+    print(f"The sum of {a} and {b} is: {result}")
 
 
 @app.route('/a1g', methods=['GET'])
 def a1g_page():
     result = add_numbers(3, 5)
-    name = print_greeting('Vanesa')
+    add_and_print(3, 4)
 
-    text = name + str(result)
-    return jsonify(text)
+    return jsonify(result)
 
 
 @app.route('/a1e', methods=['GET'])
-def a2e_page():
+def a1e_page():
     numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     from NumberList import NumberList
     number_list = NumberList(numbers)
@@ -35,13 +35,10 @@ def a2e_page():
 
 
 # Beispiel für Immutable values in Python
-immutable_list = (1, 2, 3)  # Tuple ist unveränderlich
+immutable_list = (1, 2, 3)
 
-# Versuch, den Tuple zu ändern, führt zu einem Fehler
-# immutable_list[0] = 5  # TypeError: 'tuple' object does not support item assignment
-
-# Beispiel für referenzierte Objekte (mutable) in Python
-mutable_list = [1, 2, 3]  # Liste ist veränderlich
+# Beispiel für referenzierte Objekte in Python
+mutable_list = [1, 2, 3]
 
 
 @app.route('/a1f')
