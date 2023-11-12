@@ -44,26 +44,22 @@ def b1f_page():
 
 
 def load_data_from_file(file_path):
-    # Funktion, die Daten aus einer Datei lädt
     with open(file_path, 'r') as file:
         data = file.read()
     return data
 
 
 def process_data(data):
-    # Funktion, die Daten verarbeitet (z.B., Berechnungen)
     processed_data = [int(item) * 2 for item in data.split()]
     return processed_data
 
 
 def update_inventory(processed_data):
-    # Funktion, die den Warenbestand aktualisiert
     inventory = sum(processed_data)
     return f"Updated inventory: {inventory}"
 
 
 def main_algorithm(file_path):
-    # Verkettung der Funktionen für den Gesamtalgorithmus
     data = load_data_from_file(file_path)
     processed_data = process_data(data)
     return update_inventory(processed_data)
