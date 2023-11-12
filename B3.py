@@ -24,8 +24,10 @@ def b3f_page():
 def b3e_page():
     words = ["orange", "banana", "kiwi", "apple"]
     sorted_words = sorted(words, key=lambda x: len(x))
-
-    return jsonify(sorted_words)
+    data = [5, 12, 8, 3, 15]
+    maximum_value = max(data, key=lambda x: x % 10)
+    print(maximum_value)
+    return jsonify(sorted_words + [maximum_value])
 
 
 if __name__ == '__main__':
